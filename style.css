@@ -5,8 +5,13 @@
     -webkit-touch-callout: none;
 }
 
-html, body {
-    margin: 32px;
+html {
+    margin: 0;
+    background: rgba(0, 0, 0, 0.02);
+}
+
+body {
+    padding: 32px;
 }
 
 ul#files,

@@ -1,7 +1,6 @@
 <?php
-    date_default_timezone_set('America/Los_Angeles');
-    
-    $directory = '../files/';
+    require('../config.php');
+
     $files = scandir($directory);
 
     $filesWithMetadata = [];
