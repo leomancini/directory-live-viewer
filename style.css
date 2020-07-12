@@ -7,7 +7,7 @@
 
 html {
     margin: 0;
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(0, 0, 0, 0.03);
 }
 
 body {
@@ -23,6 +23,7 @@ ul#newFileTempContainer {
 }
 
 li {
+    background: #ffffff;
     width: 100%;
     border-radius: 16px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
