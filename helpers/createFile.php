@@ -1,14 +1,17 @@
 <?php
     require('../config.php');
+    
+    header("Access-Control-Allow-Origin: *");
+    
+    if ($_GET['dataType'] === 'png_base64') {
+        $imageData = base64_decode($_POST['image']);
 
-    $inputFilename = basename($_FILES['image']['name']);
-    $inputFileExtension = strtolower(pathinfo($directory.$inputFilename, PATHINFO_EXTENSION));
-
-    $newFilename = $directory.$_POST['name'].'.'.$inputFileExtension;
-
-    if (move_uploaded_file($_FILES['image']['tmp_name'], $newFilename)) {
-        echo 'File uploaded: '.$newFilename;
+        file_put_contents($directory.time().$timestampNameDelimiter.$_POST['name'].'.png', $imageData);
     } else {
-        echo 'Error uploading file';
+        $inputFilename = basename($_FILES['image']['name']);
+        $inputFileExtension = strtolower(pathinfo($directory.$inputFilename, PATHINFO_EXTENSION));
+
+        $newFilename = $directory.time().$timestampNameDelimiter.$_POST['name'].'.'.$inputFileExtension;
+        move_uploaded_file($_FILES['image']['tmp_name'], $newFilename);
     }
 ?>

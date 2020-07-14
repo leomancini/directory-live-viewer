@@ -16,7 +16,7 @@ body {
 
 ul#files,
 ul#newFileTempContainer {
-    width: 600px;
+    width: 520px;
     list-style-type: none;
     padding: 0;
     margin: 0 auto;

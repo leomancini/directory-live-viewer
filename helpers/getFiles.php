@@ -10,7 +10,7 @@
             array_push($filesWithMetadata, [
                 'id' => md5($filename),
                 'name' => $filename,
-                'nameWithoutExtension' => pathinfo($directory.$filename)['filename'],
+                'nameWithoutExtension' => explode($timestampNameDelimiter, pathinfo($directory.$filename)['filename'])[1],
                 'type' => mime_content_type($directory.$filename),
                 'width' => getimagesize($directory.$filename)[0],
                 'height' => getimagesize($directory.$filename)[1],
